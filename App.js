@@ -67,7 +67,7 @@ const createChart = (dataset) =>{
     const tooltip = d3.select('#svgContainer')
                         .append('div')
                         .attr('id','tooltip')
-                        .attr('style','opacity: 1')
+                        .attr('style','opacity: 0')
                         .attr('class','align-center')
                        
     const svg = d3.select("#svgContainer")
