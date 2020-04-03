@@ -13,7 +13,12 @@ html,body{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #1A181E;
+}
+
+#title{
+    font-family: 'Oswald', cursive;
+    font-size: 3.5rem;
 }
 
 #container{
@@ -21,39 +26,52 @@ html,body{
     min-width: 1300px;
     height: 90%;
     flex-direction: column;
-    background-color: white;
+    background-color: #E8E8E8;
+    justify-content: space-around;
+    border-radius: 10px;
 }
 
 #svgContainer{
     width: auto;
     height: auto;
     display: flex;
-}
-svg{
-    background-color: white;
-    
-}
-#tooltip{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-start;
-}
-#info{
    
 }
+svg{
+    background-color: #F2F4F3;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+}
+
+#info{
+   align-self: flex-end;
+    margin-right: 10%;
+    font-family: 'Oswald',sans-serif;
+    
+}
 .bar{
-    fill: blue;
+    fill: #6CD4FF;
 }
 .bar:hover{
-    fill: white;
+    fill: #FE938C;
 }
 
 #tooltip{
-    background-color:aqua;
     width: 150px;
     height: 50px;
     position: absolute;
+    flex-direction: column;
+    align-self: flex-start;
+    background-color: #FE938C;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    font-family: 'Lora', sans-serif;
+}
 
+#tooltip:hover{
+    display: none;
+}
+
+#x-axis, #y-axis{
+    font-family: 'Oswald', sans-serif;
 }
