@@ -48,6 +48,7 @@ const createChart = (dataset) =>{
     const xScale = d3.scaleLinear()
                     .domain([horizontalMin,horizontalMax])
                     .range([padding, w])
+                    
     
      const xScaleAxis = d3.scaleLinear()
                     .domain([d3.min(year),d3.max(year)])
@@ -61,12 +62,12 @@ const createChart = (dataset) =>{
                     .domain([0, verticalMax])
                     .range([h-padding, 0])
     
-    const xAxis = d3.axisBottom(xScaleAxis);
+    const xAxis = d3.axisBottom(xScaleAxis).tickFormat(d3.format('d'));
     const yAxis = d3.axisLeft(yScaleAxis);
     const tooltip = d3.select('#svgContainer')
                         .append('div')
                         .attr('id','tooltip')
-                        .attr('style','opacity: 0')
+                        .attr('style','opacity: 1')
                         .attr('class','align-center')
                        
     const svg = d3.select("#svgContainer")
@@ -81,7 +82,7 @@ const createChart = (dataset) =>{
             .append('rect')
             .attr('x', (d, i) => xScale(StringToDate[i]))
             .attr('y', (d,i) => h-yScale(dataPoint[i]))
-            .attr('width',3)
+            .attr('width',w/(dataset.length))
             .attr('height', (d,i) => yScale(dataPoint[i]))
             .attr('class', 'bar')
             .attr('data-date', (d,i)=>dataset[i][0])
